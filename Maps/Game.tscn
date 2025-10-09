@@ -87,7 +87,7 @@ shape = SubResource("CapsuleShape3D_lntlw")
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="House" type="MeshInstance3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3203068, -0.51966727, 0.9412571)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3250322, -0.6657536, 0.9589428)
 mesh = ExtResource("2_hyobi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_kkdw2")
@@ -108,14 +108,14 @@ light_energy = 0.135
 
 [node name="Objects" type="Node3D" parent="Environment"]
 
-[node name="Sprite3D" type="Sprite3D" parent="Environment/Objects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8815633, 1.2255142, 1.3866116)
+[node name="Chandelier" type="Sprite3D" parent="Environment/Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8815633, 0.8160908, 1.3866116)
 billboard = 2
 shaded = true
 texture_filter = 4
 texture = ExtResource("4_mdqsx")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Environment/Objects/Sprite3D"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Environment/Objects/Chandelier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34575355, 0)
 light_color = Color(0.89658993, 0.6503896, 0.5989855, 1)
 light_energy = 1.403
