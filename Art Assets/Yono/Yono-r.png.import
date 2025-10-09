@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlrs64vadqyeg"
-path.s3tc="res://.godot/imported/BunrakuA-Eyes.png-1d744f8db8c8ca366041d30b1b62f4a9.s3tc.ctex"
+uid="uid://c6sfedt5mjxku"
+path.s3tc="res://.godot/imported/Yono-r.png-0a5090d2965b16321309ec6b2d2db1e2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art Assets/BunrakuA-Eyes.png"
-dest_files=["res://.godot/imported/BunrakuA-Eyes.png-1d744f8db8c8ca366041d30b1b62f4a9.s3tc.ctex"]
+source_file="res://Art Assets/Yono/Yono-r.png"
+dest_files=["res://.godot/imported/Yono-r.png-0a5090d2965b16321309ec6b2d2db1e2.s3tc.ctex"]
 
 [params]
 
