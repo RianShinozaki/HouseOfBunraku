@@ -14,7 +14,6 @@ var held_object: Node3D = null
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
 	# RAYCAST SETUP 
 	raycast = RayCast3D.new()
 	$Camera3D.add_child(raycast)
@@ -51,15 +50,12 @@ func try_interact():
 		return
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
-		
 		# Check if object is pickupable
 		if collider and collider.is_in_group("pickupable"):
 			pick_up_object(collider)
 
 func pick_up_object(object):
 	print("Picked up: ", object.name)
-	
-	# Remove from current parent
 	var object_parent = object.get_parent()
 	object_parent.remove_child(object)
 	
@@ -70,30 +66,24 @@ func pick_up_object(object):
 	
 	# Attach to camera 
 	$Camera3D.add_child(object)
-	
 	# POSITION IN FRONT OF CAMERA 
 	object.position = Vector3(0.3, -0.2, -0.5)  
 	object.rotation_degrees = Vector3(0, 0, 0)
 	object.scale = Vector3(1, 1, 1) 
-	
 	held_object = object
 
 func drop_object():
 	if not held_object:
 		return
 	
-	print("Dropped: ", held_object.name)
-	
 	# Remove from camera
 	$Camera3D.remove_child(held_object)
-	
-	# Add back to scene (to the root or Environment)
+	# Add back to scene
 	get_tree().root.get_child(0).add_child(held_object)
 	
 	# Position in front of player
 	held_object.global_position = global_position + global_transform.basis.z * -1.0
 	
-	# Re-enable collisions
 	for child in held_object.get_children():
 		if child is CollisionShape3D:
 			child.disabled = false
