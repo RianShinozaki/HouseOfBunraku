@@ -1,15 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bye6w6mipuigf"]
+[gd_scene load_steps=12 format=3 uid="uid://bye6w6mipuigf"]
 
 [ext_resource type="PackedScene" uid="uid://cbki4518ca03c" path="res://Objects/yono.tscn" id="1_8edix"]
 [ext_resource type="ArrayMesh" uid="uid://cwi66wxkmptds" path="res://Art Assets/Models/House.obj" id="2_hyobi"]
-[ext_resource type="Script" uid="uid://c3f5d5j8yehpf" path="res://Scripts/yono.gd" id="2_qpgel"]
 [ext_resource type="Texture2D" uid="uid://femlvshxx27j" path="res://Art Assets/Models/texture_HouseTileset.png" id="3_mdqsx"]
 [ext_resource type="Texture2D" uid="uid://cce2h2tfik75p" path="res://Art Assets/Chandelier.png" id="4_mdqsx"]
 [ext_resource type="Texture2D" uid="uid://bgy1lcpioecc" path="res://Art Assets/Models/texture_HouseTileset_n.png" id="6_8puwx"]
 [ext_resource type="Texture2D" uid="uid://dh5se1x8k5x4b" path="res://Art Assets/Models/HouseTileset_h.png" id="7_ceqvn"]
 [ext_resource type="Script" uid="uid://2vij0disc04a" path="res://Scripts/light_flicker.gd" id="10_ceqvn"]
-[ext_resource type="PackedScene" path="res://Objects/player.tscn" id="11_lntlw"]
-[ext_resource type="PackedScene" path="res://Objects/Key.tscn" id="12_lntlw"]
+[ext_resource type="PackedScene" uid="uid://6hmil0dhqlfe" path="res://Objects/player.tscn" id="11_lntlw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkdw2"]
 diffuse_mode = 1
@@ -40,10 +38,6 @@ fog_light_energy = 1.77
 
 [node name="Yono" parent="." instance=ExtResource("1_8edix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4758823, -0.19540563, -0.52418447)
-script = ExtResource("2_qpgel")
-too_close_distance = 0.0
-too_close_curve = null
-too_close_factor = 0.0
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -91,7 +85,4 @@ energy_range = Vector2(1.3, 1.5)
 energy_delta_range = 0.02
 
 [node name="Player" parent="." instance=ExtResource("11_lntlw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, -0.09, 0.314)
-
-[node name="StaticBody3D2" parent="." instance=ExtResource("12_lntlw")]
-transform = Transform3D(1, 0, 0, 0, 0.95633, -0.292288, 0, 0.292288, 0.95633, 0.562625, -0.12114492, -0.207636)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46437943, -0.09, 1.4211249)

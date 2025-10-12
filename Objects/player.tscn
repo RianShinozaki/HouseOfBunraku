@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb7vgfweuwp2h"]
+[gd_scene load_steps=5 format=3 uid="uid://6hmil0dhqlfe"]
 
 [ext_resource type="Script" uid="uid://bkpln80cxq5j1" path="res://Scripts/player.gd" id="1_y0qk3"]
 [ext_resource type="Texture2D" uid="uid://d310rwalofv1g" path="res://Art Assets/UIPointerCircle.png" id="2_2i4gt"]
@@ -38,6 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 texture_filter = 1
@@ -54,5 +55,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 pivot_offset = Vector2(7.5, 7.5)
+mouse_filter = 2
 texture = ExtResource("2_3y5cq")
 metadata/_edit_use_anchors_ = true

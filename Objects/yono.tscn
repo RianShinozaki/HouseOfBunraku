@@ -1,12 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbki4518ca03c"]
+[gd_scene load_steps=12 format=3 uid="uid://cbki4518ca03c"]
 
-[ext_resource type="Script" path="res://Scripts/bunraku.gd" id="1_5sjfi"]
+[ext_resource type="Script" uid="uid://c3f5d5j8yehpf" path="res://Scripts/yono.gd" id="1_5sjfi"]
+[ext_resource type="PackedScene" uid="uid://bta7t4ubs7afy" path="res://Objects/Key.tscn" id="2_h58cf"]
 [ext_resource type="Texture2D" uid="uid://ftpoa3lean0y" path="res://Art Assets/Yono/Yono.png" id="2_ua3am"]
 [ext_resource type="Texture2D" uid="uid://b8ei1uv5v1guf" path="res://Art Assets/Yono/Yono-h_n.png" id="3_h58cf"]
 [ext_resource type="Texture2D" uid="uid://1nwng0r3tgyc" path="res://Art Assets/Yono/Yono-e.png" id="4_1vdij"]
 [ext_resource type="Texture2D" uid="uid://dykv45hyfieox" path="res://Art Assets/Yono/Yono-h.png" id="5_sih24"]
 [ext_resource type="Texture2D" uid="uid://c6sfedt5mjxku" path="res://Art Assets/Yono/Yono-r.png" id="6_xjoem"]
 [ext_resource type="Script" path="res://Scripts/billboard_sim.gd" id="7_brmr6"]
+
+[sub_resource type="Curve" id="Curve_5sjfi"]
+_data = [Vector2(0, 0), 0.0, 0.6430433, 0, 0, Vector2(1, 1), 1.8998978, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lntlw"]
 radius = 0.12
@@ -39,8 +44,13 @@ stencil_outline_thickness = 1.18
 
 [node name="Yono" type="AnimatableBody3D"]
 script = ExtResource("1_5sjfi")
+too_close_distance = 1.5
+too_close_curve = SubResource("Curve_5sjfi")
+too_close_factor = 1.0
 anger_headshake_factor = 0.1
 anger_bodyshake_factor = 1.0
+anger_decrease_delta = 0.05
+anger_decrease_max = 0.15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.040527344, 0)
@@ -69,3 +79,7 @@ hframes = 2
 
 [node name="Lookat" type="Node" parent="Body"]
 script = ExtResource("7_brmr6")
+
+[node name="BlueKey" parent="Body" instance=ExtResource("2_h58cf")]
+transform = Transform3D(-4.3711392e-08, 4.3711392e-08, 1.0000001, 1, 1.9106855e-15, 4.371139e-08, 0, 1, -4.371139e-08, -0.12136492, -0.10486166, 0.033786178)
+freeze = true
