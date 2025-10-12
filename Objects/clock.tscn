@@ -30,14 +30,16 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.041, 0.47
 [node name="Glass" type="Sprite3D" parent="GlassPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31, -0.016)
 centered = false
-modulate = Color(1, 1, 1, 0.20392157)
+modulate = Color(1, 1, 1, 0.3529412)
+shaded = true
 texture_filter = 2
 texture = ExtResource("3_axheb")
 
 [node name="ClockGlass" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028073244, 0.6687572, -0.016)
 centered = false
-modulate = Color(1, 1, 1, 0.20392157)
+modulate = Color(1, 1, 1, 0.3529412)
+shaded = true
 alpha_cut = 2
 texture_filter = 2
 texture = ExtResource("4_l6xk5")
@@ -48,6 +50,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15517496, 0.6473966, -0.093
 [node name="Sprite3D" type="Sprite3D" parent="PendulumPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049795605, -0.3934877, 0)
 centered = false
+shaded = true
+alpha_cut = 2
 texture_filter = 2
 texture = ExtResource("5_d7gb4")
 
@@ -57,5 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15993772, 0.80100834, 0)
 [node name="Sprite3D" type="Sprite3D" parent="ClockHandPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019999996, 0, -0.028270274)
 centered = false
+shaded = true
 texture_filter = 2
 texture = ExtResource("6_l6xk5")

@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cirn8jbhy81ot"
-path.s3tc="res://.godot/imported/Clock-Glass.png-09370100db8c3a0eed8a65b6cdd8f7e6.s3tc.ctex"
+path="res://.godot/imported/Clock-Glass.png-09370100db8c3a0eed8a65b6cdd8f7e6.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Art Assets/Models/Clock/Clock-Glass.png"
-dest_files=["res://.godot/imported/Clock-Glass.png-09370100db8c3a0eed8a65b6cdd8f7e6.s3tc.ctex"]
+dest_files=["res://.godot/imported/Clock-Glass.png-09370100db8c3a0eed8a65b6cdd8f7e6.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
