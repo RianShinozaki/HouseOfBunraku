@@ -8,12 +8,15 @@ extends AnimatableBody3D
 @onready var body_sprite: Sprite3D = $Body
 @onready var head_sprite: Sprite3D = $Body/Head
 
+var active: bool
+
 var mat: StandardMaterial3D
 
 func _ready() -> void:
 	mat = head_sprite.material_override as StandardMaterial3D
 	
 func _physics_process(_delta: float) -> void:
+	if not active: return
 	body_sprite.offset = Vector2.ZERO
 	head_sprite.rotation.z = 0
 	mat.emission_energy_multiplier = 0
