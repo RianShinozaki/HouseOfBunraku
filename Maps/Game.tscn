@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bye6w6mipuigf"]
+[gd_scene load_steps=16 format=3 uid="uid://bye6w6mipuigf"]
 
 [ext_resource type="PackedScene" uid="uid://cbki4518ca03c" path="res://Objects/yono.tscn" id="1_8edix"]
 [ext_resource type="ArrayMesh" uid="uid://cwi66wxkmptds" path="res://Art Assets/Models/House.obj" id="2_hyobi"]
@@ -12,7 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://b8ln8a0lrica1" path="res://Objects/fridge.tscn" id="10_lntlw"]
 [ext_resource type="PackedScene" uid="uid://6hmil0dhqlfe" path="res://Objects/player.tscn" id="11_lntlw"]
 
+[sub_resource type="Curve" id="Curve_ceqvn"]
+_data = [Vector2(0, 0), 0.0, 0.6430433, 0, 0, Vector2(1, 1), 1.8998978, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkdw2"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 diffuse_mode = 1
 albedo_texture = ExtResource("3_mdqsx")
 normal_enabled = true
@@ -41,6 +48,9 @@ fog_light_energy = 1.77
 
 [node name="Yono" parent="." instance=ExtResource("1_8edix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4758823, -0.19540563, -0.52418447)
+look_anger_range = 0.2
+look_anger_curve = SubResource("Curve_ceqvn")
+look_anger_factor = 0.4
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -67,7 +77,7 @@ light_energy = 0.08
 [node name="Objects" type="Node3D" parent="Environment"]
 
 [node name="Chandelier" type="Sprite3D" parent="Environment/Objects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.881563, 1.22551, 1.38661)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.881563, 0.9008539, 1.38661)
 billboard = 2
 shaded = true
 texture_filter = 4
@@ -119,5 +129,14 @@ skeleton = NodePath("../..")
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -1.1608192, 0.17629871, 4.3118567)
 skeleton = NodePath("../..")
 
+[node name="Fridge7" parent="Environment/Objects" instance=ExtResource("10_lntlw")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.8058334, -0.3037014, 4.3118567)
+skeleton = NodePath("../..")
+
+[node name="Fridge8" parent="Environment/Objects" instance=ExtResource("10_lntlw")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.8058334, 0.17629871, 4.3118567)
+skeleton = NodePath("../..")
+
 [node name="Player" parent="." instance=ExtResource("11_lntlw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46437943, -0.09, 1.4211249)
+move_speed = 1.5

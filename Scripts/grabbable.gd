@@ -32,6 +32,6 @@ func on_dropped():
 
 func _physics_process(_delta: float) -> void:
 	if held:
-		position = Vector3(0.3, -0.2, -0.5)  
+		position = Vector3(0.2, -0.07, -0.2)  
 		rotation_degrees = Vector3(0, 0, 0)
 		scale = Vector3(1, 1, 1) 

@@ -27,6 +27,9 @@ shape = SubResource("CapsuleShape3D_8edix")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Camera3D"]
+remote_path = NodePath("../../CanvasLayer/HoldParent")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
@@ -58,3 +61,5 @@ pivot_offset = Vector2(7.5, 7.5)
 mouse_filter = 2
 texture = ExtResource("2_3y5cq")
 metadata/_edit_use_anchors_ = true
+
+[node name="HoldParent" type="Node3D" parent="CanvasLayer"]
