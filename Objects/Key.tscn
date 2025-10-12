@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dugpjmuxabqdl"]
+[gd_scene load_steps=4 format=3 uid="uid://cbjxy33jwkrmi"]
+
+[ext_resource type="Script" uid="uid://cotca3qvkn4gd" path="res://Scripts/grabbable.gd" id="1_gp5im"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ib7np"]
 size = Vector3(0.2, 0.2, 0.2)
@@ -6,7 +8,11 @@ size = Vector3(0.2, 0.2, 0.2)
 [sub_resource type="BoxMesh" id="BoxMesh_gp5im"]
 size = Vector3(0.2, 0.2, 0.2)
 
-[node name="StaticBody3D" type="StaticBody3D" groups=["pickupable"]]
+[node name="Key" type="RigidBody3D" groups=["pickupable"]]
+collision_layer = 4
+collision_mask = 5
+freeze_mode = 1
+script = ExtResource("1_gp5im")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 
