@@ -4,7 +4,13 @@ extends RigidBody3D
 
 var held = false
 
+func can_pickup() -> bool:
+	if held or freeze:
+		return false
+	return true
+	
 func on_pickup():
+	if not can_pickup(): return
 	held = true
 	# Disable all collisions
 	for child in get_children():

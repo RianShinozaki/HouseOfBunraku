@@ -35,7 +35,7 @@ func _physics_process(_delta: float) -> void:
 	$CanvasLayer/TextureRect.texture = crossUI
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
-		if collider and collider is Grabbable:
+		if collider and collider.is_in_group("Interactable"):
 			$CanvasLayer/TextureRect.texture = circleUI
 		
 func _unhandled_input(event: InputEvent) -> void:
@@ -64,17 +64,19 @@ func try_interact():
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		# Check if object is pickupable
-		if collider and collider is Grabbable:
+		if collider and collider.is_in_group("Interactable"):
 			pick_up_object(collider)
 
-func pick_up_object(object: Grabbable):
-	print("Picked up: ", object.name)
+func pick_up_object(object: Node3D):
+	var success = object.can_pickup()
+	object.on_pickup()
+	if not success: return
+	
 	var object_parent = object.get_parent()
 	object_parent.remove_child(object)
 	# Attach to camera 
 	$Camera3D.add_child(object)
 	held_object = object
-	object.on_pickup()
 
 func drop_held_object():
 	if not held_object:
