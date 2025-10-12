@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbki4518ca03c"]
+
+[ext_resource type="Script" path="res://Scripts/bunraku.gd" id="1_5sjfi"]
+[ext_resource type="Texture2D" uid="uid://ftpoa3lean0y" path="res://Art Assets/Yono/Yono.png" id="2_ua3am"]
+[ext_resource type="Texture2D" uid="uid://b8ei1uv5v1guf" path="res://Art Assets/Yono/Yono-h_n.png" id="3_h58cf"]
+[ext_resource type="Texture2D" uid="uid://1nwng0r3tgyc" path="res://Art Assets/Yono/Yono-e.png" id="4_1vdij"]
+[ext_resource type="Texture2D" uid="uid://dykv45hyfieox" path="res://Art Assets/Yono/Yono-h.png" id="5_sih24"]
+[ext_resource type="Texture2D" uid="uid://c6sfedt5mjxku" path="res://Art Assets/Yono/Yono-r.png" id="6_xjoem"]
+[ext_resource type="Script" path="res://Scripts/billboard_sim.gd" id="7_brmr6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lntlw"]
+radius = 0.12
+height = 0.72753906
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbg5b"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_ua3am")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("4_1vdij")
+normal_enabled = true
+normal_scale = 0.53
+normal_texture = ExtResource("3_h58cf")
+bent_normal_texture = ExtResource("3_h58cf")
+rim_enabled = true
+rim = 0.43
+rim_tint = 0.3
+rim_texture = ExtResource("6_xjoem")
+heightmap_enabled = true
+heightmap_scale = 3.0
+heightmap_texture = ExtResource("5_sih24")
+texture_filter = 2
+billboard_keep_scale = true
+stencil_flags = 2
+stencil_outline_thickness = 1.18
+
+[node name="Yono" type="AnimatableBody3D"]
+script = ExtResource("1_5sjfi")
+anger_headshake_factor = 0.1
+anger_bodyshake_factor = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.040527344, 0)
+shape = SubResource("CapsuleShape3D_lntlw")
+
+[node name="Body" type="Sprite3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_qbg5b")
+shaded = true
+double_sided = false
+alpha_cut = 2
+texture_filter = 2
+texture = ExtResource("2_ua3am")
+hframes = 2
+frame = 1
+
+[node name="Head" type="Sprite3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+material_override = SubResource("StandardMaterial3D_qbg5b")
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 2
+texture = ExtResource("2_ua3am")
+hframes = 2
+
+[node name="Lookat" type="Node" parent="Body"]
+script = ExtResource("7_brmr6")
