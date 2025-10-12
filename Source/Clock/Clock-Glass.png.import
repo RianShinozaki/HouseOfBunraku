@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d310rwalofv1g"
-path="res://.godot/imported/UIPointerCircle.png-ed2593998b2dcca402bd0aa29e7a1035.ctex"
+uid="uid://f5gr8dg01u35"
+path="res://.godot/imported/Clock-Glass.png-9929ff1d2564e602768581e50aee5ec3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/UIPointerCircle.png"
-dest_files=["res://.godot/imported/UIPointerCircle.png-ed2593998b2dcca402bd0aa29e7a1035.ctex"]
+source_file="res://Source/Clock/Clock-Glass.png"
+dest_files=["res://.godot/imported/Clock-Glass.png-9929ff1d2564e602768581e50aee5ec3.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

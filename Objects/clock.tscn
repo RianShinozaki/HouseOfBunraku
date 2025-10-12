@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://qgrt3asn0m3f"]
+
+[ext_resource type="ArrayMesh" uid="uid://1keuprw3mcks" path="res://Art Assets/Models/Clock/Clock.obj" id="1_h4g30"]
+[ext_resource type="Texture2D" uid="uid://1144s66jueku" path="res://Art Assets/Models/Clock/texture_Clock_tex.png" id="2_eiut8"]
+[ext_resource type="Texture2D" uid="uid://cirn8jbhy81ot" path="res://Art Assets/Models/Clock/Clock-Glass.png" id="3_axheb"]
+[ext_resource type="Texture2D" uid="uid://bw3rnqpxwpwvp" path="res://Art Assets/Models/Clock/Clock-Hand-Glass.png" id="4_l6xk5"]
+[ext_resource type="Texture2D" uid="uid://d1luglgh34gth" path="res://Art Assets/Pendulum.png" id="5_d7gb4"]
+[ext_resource type="Texture2D" uid="uid://c8d2lmbb75t6l" path="res://ClockHand.png" id="6_l6xk5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lntlw"]
+albedo_texture = ExtResource("2_eiut8")
+texture_filter = 2
+disable_receive_shadows = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xacle"]
+data = PackedVector3Array(0.29, 0.92999995, -0.03, 0.03, 0.66999996, -0.03, 0.03, 0.92999995, -0.03, 0.29, 0.66999996, -0.03, 0.03, 0.66999996, -0.03, 0.29, 0.92999995, -0.03, 0, 0.96, 0, 0, 0, -0.32, 0, 0.96, -0.32, 0, 0, 0, 0, 0, -0.32, 0, 0.96, 0, 0.32, 0.96, -0.32, 0.32, 0, 0, 0.32, 0.96, 0, 0.32, 0, -0.32, 0.32, 0, 0, 0.32, 0.96, -0.32, 0.28, 0.64, 0, 0.28, 0.16, -0.16, 0.28, 0.64, -0.16, 0.28, 0.16, 0, 0.28, 0.16, -0.16, 0.28, 0.64, 0, 0.04, 0.64, -0.16, 0.04, 0.16, 0, 0.04, 0.64, 0, 0.04, 0.16, -0.16, 0.04, 0.16, 0, 0.04, 0.64, -0.16, 0.28, 0.64, -0.16, 0.04, 0.16, -0.16, 0.04, 0.64, -0.16, 0.28, 0.16, -0.16, 0.04, 0.16, -0.16, 0.28, 0.64, -0.16, 0.28, 0.16, -0.16, 0.04, 0.16, 0, 0.04, 0.16, -0.16, 0.28, 0.16, 0, 0.04, 0.16, 0, 0.28, 0.16, -0.16, 0.28, 0.64, 0, 0.04, 0.64, -0.16, 0.04, 0.64, 0, 0.28, 0.64, -0.16, 0.04, 0.64, -0.16, 0.28, 0.64, 0, 0.29, 0.92999995, 0, 0.29, 0.66999996, -0.03, 0.29, 0.92999995, -0.03, 0.29, 0.66999996, 0, 0.29, 0.66999996, -0.03, 0.29, 0.92999995, 0, 0.03, 0.92999995, -0.03, 0.03, 0.66999996, 0, 0.03, 0.92999995, 0, 0.03, 0.66999996, -0.03, 0.03, 0.66999996, 0, 0.03, 0.92999995, -0.03, 0.29, 0.66999996, -0.03, 0.03, 0.66999996, 0, 0.03, 0.66999996, -0.03, 0.29, 0.66999996, 0, 0.03, 0.66999996, 0, 0.29, 0.66999996, -0.03, 0.29, 0.92999995, 0, 0.03, 0.92999995, -0.03, 0.03, 0.92999995, 0, 0.29, 0.92999995, -0.03, 0.03, 0.92999995, -0.03, 0.29, 0.92999995, 0, 0.03, 0.96, -0.03, 0, 0.64, -0.03, 0, 0.96, -0.03, 0.03, 0.64, -0.03, 0, 0.64, -0.03, 0.03, 0.96, -0.03, 0.29, 0.96, -0.03, 0.03, 0.92999995, -0.03, 0.03, 0.96, -0.03, 0.04, 0.64, -0.03, 0, 0.16, -0.03, 0, 0.64, -0.03, 0.04, 0.16, -0.03, 0, 0.16, -0.03, 0.04, 0.64, -0.03, 0.29, 0.92999995, -0.03, 0.03, 0.92999995, -0.03, 0.29, 0.96, -0.03, 0.32, 0.96, -0.03, 0.29, 0.64, -0.03, 0.29, 0.96, -0.03, 0.32, 0.64, -0.03, 0.29, 0.64, -0.03, 0.32, 0.96, -0.03, 0.32, 0.64, -0.03, 0.28, 0.16, -0.03, 0.28, 0.64, -0.03, 0.32, 0.16, -0.03, 0.28, 0.16, -0.03, 0.32, 0.64, -0.03, 0.32, 0, -0.03, 0, 0, -0.03, 0.32, 0.16, -0.03, 0.32, 0.16, -0.03, 0, 0, -0.03, 0, 0.16, -0.03, 0.29, 0.66999996, -0.03, 0.03, 0.64, -0.03, 0.03, 0.66999996, -0.03, 0.29, 0.64, -0.03, 0.03, 0.64, -0.03, 0.29, 0.66999996, -0.03)
+
+[node name="Clock" type="MeshInstance3D"]
+mesh = ExtResource("1_h4g30")
+surface_material_override/0 = SubResource("StandardMaterial3D_lntlw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xacle")
+
+[node name="GlassPivot" type="Node3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.041, 0.471, 0.008)
+
+[node name="Glass" type="Sprite3D" parent="GlassPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31, -0.016)
+centered = false
+modulate = Color(1, 1, 1, 0.20392157)
+texture_filter = 2
+texture = ExtResource("3_axheb")
+
+[node name="ClockGlass" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028073244, 0.6687572, -0.016)
+centered = false
+modulate = Color(1, 1, 1, 0.20392157)
+alpha_cut = 2
+texture_filter = 2
+texture = ExtResource("4_l6xk5")
+
+[node name="PendulumPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15517496, 0.6473966, -0.09359042)
+
+[node name="Sprite3D" type="Sprite3D" parent="PendulumPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049795605, -0.3934877, 0)
+centered = false
+texture_filter = 2
+texture = ExtResource("5_d7gb4")
+
+[node name="ClockHandPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15993772, 0.80100834, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="ClockHandPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019999996, 0, -0.028270274)
+centered = false
+texture_filter = 2
+texture = ExtResource("6_l6xk5")

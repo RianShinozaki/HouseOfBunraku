@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d310rwalofv1g"
-path="res://.godot/imported/UIPointerCircle.png-ed2593998b2dcca402bd0aa29e7a1035.ctex"
+uid="uid://c8d2lmbb75t6l"
+path.s3tc="res://.godot/imported/ClockHand.png-ed00bc1efbf830cecf96ac5a1cf8c59a.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Art Assets/UIPointerCircle.png"
-dest_files=["res://.godot/imported/UIPointerCircle.png-ed2593998b2dcca402bd0aa29e7a1035.ctex"]
+source_file="res://ClockHand.png"
+dest_files=["res://.godot/imported/ClockHand.png-ed00bc1efbf830cecf96ac5a1cf8c59a.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

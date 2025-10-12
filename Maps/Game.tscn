@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bye6w6mipuigf"]
+[gd_scene load_steps=14 format=3 uid="uid://bye6w6mipuigf"]
 
 [ext_resource type="PackedScene" uid="uid://cbki4518ca03c" path="res://Objects/yono.tscn" id="1_8edix"]
 [ext_resource type="ArrayMesh" uid="uid://cwi66wxkmptds" path="res://Art Assets/Models/House.obj" id="2_hyobi"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cce2h2tfik75p" path="res://Art Assets/Chandelier.png" id="4_mdqsx"]
 [ext_resource type="Texture2D" uid="uid://bgy1lcpioecc" path="res://Art Assets/Models/texture_HouseTileset_n.png" id="6_8puwx"]
 [ext_resource type="Texture2D" uid="uid://dh5se1x8k5x4b" path="res://Art Assets/Models/HouseTileset_h.png" id="7_ceqvn"]
+[ext_resource type="PackedScene" uid="uid://qgrt3asn0m3f" path="res://Objects/clock.tscn" id="8_8edix"]
+[ext_resource type="PackedScene" uid="uid://crid5pnloa3s1" path="res://Objects/Gear.tscn" id="8_qpgel"]
 [ext_resource type="Script" uid="uid://2vij0disc04a" path="res://Scripts/light_flicker.gd" id="10_ceqvn"]
 [ext_resource type="PackedScene" uid="uid://6hmil0dhqlfe" path="res://Objects/player.tscn" id="11_lntlw"]
 
@@ -63,14 +65,14 @@ light_energy = 0.135
 
 [node name="Objects" type="Node3D" parent="Environment"]
 
-[node name="Sprite3D" type="Sprite3D" parent="Environment/Objects"]
+[node name="Chandelier" type="Sprite3D" parent="Environment/Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.881563, 1.22551, 1.38661)
 billboard = 2
 shaded = true
 texture_filter = 4
 texture = ExtResource("4_mdqsx")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Environment/Objects/Sprite3D"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Environment/Objects/Chandelier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.345754, 0)
 light_color = Color(0.89659, 0.65039, 0.598985, 1)
 light_energy = 1.403
@@ -83,6 +85,13 @@ omni_attenuation = 2.068
 script = ExtResource("10_ceqvn")
 energy_range = Vector2(1.3, 1.5)
 energy_delta_range = 0.02
+
+[node name="Key" parent="Environment/Objects" instance=ExtResource("8_qpgel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.982646, -0.41183656, -0.89881295)
+
+[node name="Clock" parent="Environment/Objects" instance=ExtResource("8_8edix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.636219, -0.51966697, -0.9980193)
+skeleton = NodePath("../..")
 
 [node name="Player" parent="." instance=ExtResource("11_lntlw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46437943, -0.09, 1.4211249)
