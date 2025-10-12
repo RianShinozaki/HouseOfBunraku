@@ -9,13 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://b8ei1uv5v1guf" path="res://Art Assets/Yono/Yono-h_n.png" id="4_lntlw"]
 [ext_resource type="Texture2D" uid="uid://cce2h2tfik75p" path="res://Art Assets/Chandelier.png" id="4_mdqsx"]
 [ext_resource type="Script" uid="uid://c0ihgp1b5qalr" path="res://Scripts/billboard_sim.gd" id="5_lntlw"]
+[ext_resource type="Script" uid="uid://dwdun0bha2rrc" path="res://Scripts/bunraku.gd" id="6_1shu2"]
 [ext_resource type="Texture2D" uid="uid://bgy1lcpioecc" path="res://Art Assets/Models/texture_HouseTileset_n.png" id="6_8puwx"]
 [ext_resource type="Texture2D" uid="uid://c6sfedt5mjxku" path="res://Art Assets/Yono/Yono-r.png" id="6_ys1ck"]
 [ext_resource type="Texture2D" uid="uid://dh5se1x8k5x4b" path="res://Art Assets/Models/HouseTileset_h.png" id="7_ceqvn"]
 [ext_resource type="Script" uid="uid://2vij0disc04a" path="res://Scripts/light_flicker.gd" id="10_ceqvn"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xacle"]
-load_path = "res://.godot/imported/BunrakuA-Eyes.png-2848ee4e57f70f6fc7b2d6cfea1740d6.s3tc.ctex"
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lntlw"]
+radius = 0.12
+height = 0.72753906
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbg5b"]
 transparency = 2
@@ -24,7 +26,7 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("1_ceqvn")
 emission_enabled = true
-emission_energy_multiplier = 0.02
+emission_energy_multiplier = 0.0
 emission_texture = ExtResource("4_1shu2")
 normal_enabled = true
 normal_scale = 0.53
@@ -37,15 +39,10 @@ rim_texture = ExtResource("6_ys1ck")
 heightmap_enabled = true
 heightmap_scale = 3.0
 heightmap_texture = ExtResource("3_ceqvn")
-backlight_texture = SubResource("CompressedTexture2D_xacle")
 texture_filter = 2
 billboard_keep_scale = true
 stencil_flags = 2
 stencil_outline_thickness = 1.18
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lntlw"]
-radius = 0.12
-height = 0.72753906
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkdw2"]
 diffuse_mode = 1
@@ -79,8 +76,18 @@ height = 0.8773804
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Bunraku" type="Sprite3D" parent="."]
+[node name="Yono" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4590745, -0.29141548, -0.42458403)
+script = ExtResource("6_1shu2")
+anger_headshake_factor = 0.1
+anger_bodyshake_factor = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Yono"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.040527344, 0)
+shape = SubResource("CapsuleShape3D_lntlw")
+
+[node name="Body" type="Sprite3D" parent="Yono"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_qbg5b")
 shaded = true
 double_sided = false
@@ -90,7 +97,7 @@ texture = ExtResource("1_ceqvn")
 hframes = 2
 frame = 1
 
-[node name="Bunraku" type="Sprite3D" parent="Bunraku"]
+[node name="Head" type="Sprite3D" parent="Yono/Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
 material_override = SubResource("StandardMaterial3D_qbg5b")
 billboard = 2
@@ -100,13 +107,7 @@ texture_filter = 2
 texture = ExtResource("1_ceqvn")
 hframes = 2
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Bunraku"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bunraku/AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.040527344, 0)
-shape = SubResource("CapsuleShape3D_lntlw")
-
-[node name="Lookat" type="Node" parent="Bunraku"]
+[node name="Lookat" type="Node" parent="Yono/Body"]
 script = ExtResource("5_lntlw")
 
 [node name="Environment" type="Node3D" parent="."]
