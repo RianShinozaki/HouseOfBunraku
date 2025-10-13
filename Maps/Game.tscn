@@ -99,7 +99,7 @@ energy_delta_range = 0.02
 stream = ExtResource("6_jxyng")
 autoplay = true
 
-[node name="Gear" parent="Environment/Objects" instance=ExtResource("8_qpgel")]
+[node name="Gear" parent="Environment/Objects" groups=["Interactable"] instance=ExtResource("8_qpgel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.982646, -0.41183656, -0.89881295)
 
 [node name="Clock" parent="Environment/Objects" instance=ExtResource("8_8edix")]
