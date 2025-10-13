@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://blcpr6k7c64go"]
+
+[ext_resource type="Script" uid="uid://bqy6w3kiwj0fs" path="res://GearSocket.gd" id="1_joqt6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5rgnb"]
+size = Vector3(0.52734375, 0.61242676, 0.6385498)
+
+[node name="GearSocket" type="StaticBody3D" groups=["Interactable"]]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("1_joqt6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23632813, -0.19378662, -0.1807251)
+shape = SubResource("BoxShape3D_5rgnb")
