@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bta7t4ubs7afy"]
 
-[ext_resource type="Script" uid="uid://cotca3qvkn4gd" path="res://Scripts/grabbable.gd" id="1_gp5im"]
+[ext_resource type="Script" uid="uid://wmb1b8ycmxo0" path="res://Objects/clock_key.gd" id="1_wsawc"]
 [ext_resource type="Texture2D" uid="uid://cbs5aau6h1g5o" path="res://Art Assets/BlueKey.png" id="2_jqamt"]
 [ext_resource type="Texture2D" uid="uid://bwhs0nbyonhrv" path="res://Art Assets/BlueKey-h.png" id="3_wsawc"]
 [ext_resource type="Texture2D" uid="uid://dgti445hohbce" path="res://Art Assets/BlueKey-met.png" id="4_eslyi"]
@@ -27,11 +27,11 @@ texture_filter = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_ib7np"]
 size = Vector3(0.2, 0.1, 0.2)
 
-[node name="Key" type="RigidBody3D" groups=["Item", "pickupable"]]
+[node name="Key" type="RigidBody3D" groups=["Interactable", "Item", "pickupable"]]
 collision_layer = 4
 collision_mask = 5
 freeze_mode = 1
-script = ExtResource("1_gp5im")
+script = ExtResource("1_wsawc")
 
 [node name="Sprite3D" type="Sprite3D" parent="." groups=["Interactable"]]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
