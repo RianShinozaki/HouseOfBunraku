@@ -34,6 +34,9 @@ func _physics_process(_delta: float) -> void:
 		var _samp = look_anger_curve.sample(1-(_angle/look_anger_range))
 		anger_level += _delta * _samp * look_anger_factor
 		anger_decrease_delta = 0
+	if get_tree().get_nodes_in_group("Meat").size() > 0:
+		anger_level += _delta * 0.08
+		anger_decrease_delta = 0
 	
 	super._physics_process(_delta)
 	

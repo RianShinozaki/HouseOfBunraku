@@ -34,13 +34,25 @@ func _physics_process(_delta: float) -> void:
 	mat.emission_energy_multiplier = 0
 	
 	if anger_level > 0:
+		if not $Rattle.playing:
+			$Rattle.playing = true
+			$Breathe.playing = true
+			$Feedback.playing = true
+		$Rattle.volume_db = -(1-anger_level)*30 + 10
+		$Breathe.volume_db = -(1-anger_level)*30 + 10
+		$Feedback.volume_db = -(1-anger_level)*40
+		$Rattle.pitch_scale = 1+anger_level*2
+		
 		var _x = randf_range(-anger_level, anger_level)
 		head_sprite.rotation.z = -_x * anger_headshake_factor
 		body_sprite.offset = Vector2(_x, 0) * anger_bodyshake_factor
 		
 		if not update_lock:
 			mat.emission_energy_multiplier = anger_level
-	
+	else:
+		$Rattle.playing = false
+		$Breathe.playing = false
+		$Feedback.playing = false
 	if anger_level == 1:
 		get_tree().reload_current_scene()
 	

@@ -27,6 +27,8 @@ enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg")
 
 Light=""
 Interactable=""
+Meat=""
+Item=""
 
 [input]
 

@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://6hmil0dhqlfe"]
+[gd_scene load_steps=7 format=3 uid="uid://6hmil0dhqlfe"]
 
 [ext_resource type="Script" uid="uid://bkpln80cxq5j1" path="res://Scripts/player.gd" id="1_y0qk3"]
 [ext_resource type="Texture2D" uid="uid://d310rwalofv1g" path="res://Art Assets/UIPointerCircle.png" id="2_2i4gt"]
 [ext_resource type="Texture2D" uid="uid://byn1r2shm4jdg" path="res://Art Assets/UIPointerCross.png" id="2_3y5cq"]
+[ext_resource type="AudioStream" uid="uid://cxtq3i3kmf4ab" path="res://Audio Pack/Eating.mp3" id="4_0ad8t"]
+[ext_resource type="AudioStream" uid="uid://cc36ulkqkcn4d" path="res://Audio Pack/footstep_floor_creak_quiet.mp3" id="5_x20fu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8edix"]
 radius = 0.15
@@ -63,3 +65,10 @@ texture = ExtResource("2_3y5cq")
 metadata/_edit_use_anchors_ = true
 
 [node name="HoldParent" type="Node3D" parent="CanvasLayer"]
+
+[node name="EatingSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0ad8t")
+
+[node name="WalkingSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_x20fu")
+parameters/looping = true

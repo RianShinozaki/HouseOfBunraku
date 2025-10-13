@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbki4518ca03c"]
+[gd_scene load_steps=16 format=3 uid="uid://cbki4518ca03c"]
 
 [ext_resource type="Script" uid="uid://c3f5d5j8yehpf" path="res://Scripts/yono.gd" id="1_5sjfi"]
 [ext_resource type="PackedScene" uid="uid://bta7t4ubs7afy" path="res://Objects/Key.tscn" id="2_h58cf"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c6sfedt5mjxku" path="res://Art Assets/Yono/Yono-r.png" id="6_xjoem"]
 [ext_resource type="Script" path="res://Scripts/billboard_sim.gd" id="7_brmr6"]
 [ext_resource type="Script" uid="uid://2vij0disc04a" path="res://Scripts/light_flicker.gd" id="9_h58cf"]
+[ext_resource type="AudioStream" uid="uid://bvwl28b1gugfo" path="res://Audio Pack/boss_rattling.mp3" id="10_1vdij"]
+[ext_resource type="AudioStream" uid="uid://dotcf3aqdlpwu" path="res://Audio Pack/boss_breathing_female.wav" id="11_sih24"]
+[ext_resource type="AudioStream" uid="uid://cq1l7dfo2jvvq" path="res://Audio Pack/Feedback.mp3" id="12_xjoem"]
 
 [sub_resource type="Curve" id="Curve_5sjfi"]
 _data = [Vector2(0, 0), 0.0, 0.6430433, 0, 0, Vector2(1, 1), 1.8998978, 0.0, 0, 0]
@@ -47,8 +50,6 @@ script = ExtResource("1_5sjfi")
 too_close_distance = 1.5
 too_close_curve = SubResource("Curve_5sjfi")
 too_close_factor = 1.0
-look_anger_range = null
-look_anger_factor = null
 anger_headshake_factor = 0.1
 anger_bodyshake_factor = 1.0
 anger_decrease_delta = 0.15
@@ -95,3 +96,20 @@ omni_range = 430.46
 omni_attenuation = 0.5
 script = ExtResource("9_h58cf")
 energy_range = 0.25
+
+[node name="Rattle" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_1vdij")
+volume_db = -30.32
+autoplay = true
+
+[node name="Breathe" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_sih24")
+volume_db = -80.0
+pitch_scale = 1.83
+autoplay = true
+
+[node name="Feedback" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("12_xjoem")
+volume_db = -80.0
+pitch_scale = 1.83
+autoplay = true
