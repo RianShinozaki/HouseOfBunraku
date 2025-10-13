@@ -57,30 +57,49 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			try_interact()
 
+
 func try_interact():
-	# If already holding something drop it
+	# If already holding something
+	if held_object:
+		print("Already holding object, will try to place it")
+		# Check if hitting an interactable
+		if raycast.is_colliding():
+			var collider = raycast.get_collider()
+			print("Raycast hit: ", collider.name if collider else "nothing")
+			if collider and collider.is_in_group("Interactable"):
+				# Check if it's not a grabbable 
+				if not (collider is Grabbable):
+					pick_up_object(collider)
+					return
+		# If not hitting a socket- drop normally
+		print("Dropping gear normally")
+		drop_held_object()
+		return
+		
+	# Normal pickup logic when not holding anything
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
-		# Check if object is pickupable
+		print("Raycast hit: ", collider.name if collider else "nothing")
 		if collider and collider.is_in_group("Interactable"):
-			interact_object(collider)
-		elif collider and collider.is_in_group("Item"):
 			pick_up_object(collider)
-		elif held_object:
-			drop_held_object()
-			return
 	else:
-		if held_object:
-			drop_held_object()
-			return
-
+		print("Raycast not hitting anything")
+	
 func pick_up_object(object: Node3D):
+	
+	# Check if it's actually grabbable
+	if not (object is Grabbable):
+		object.on_pickup()
+		return
+	
+	# For grabbable objects
 	if held_object:
 		drop_held_object()
 		return
+		
 	var success = object.can_pickup()
-	
 	if not success: return
+	
 	object.on_pickup()
 	
 	var object_parent = object.get_parent()
@@ -88,7 +107,7 @@ func pick_up_object(object: Node3D):
 	# Attach to camera 
 	$Camera3D.add_child(object)
 	held_object = object
-
+	
 func interact_object(object: Node3D):
 	if object.can_interact():
 		object.on_interact()
