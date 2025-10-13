@@ -7,7 +7,6 @@ func _process(_delta: float) -> void:
 	if Player.instance.held_object is Meatball:
 		if not is_in_group("Interactable"):
 			add_to_group("Interactable")
-			print("touch me")
 	else:
 		if is_in_group("Interactable") and not meated:
 			remove_from_group("Interactable")

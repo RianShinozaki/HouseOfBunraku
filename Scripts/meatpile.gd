@@ -3,7 +3,7 @@ extends StaticBody3D
 @export var meat_ball: PackedScene
 
 func can_interact():
-	return not Player.instance.held_object is Meatball
+	return Player.instance.held_object == null
 	
 func on_interact():
 	var _meat = meat_ball.instantiate()
