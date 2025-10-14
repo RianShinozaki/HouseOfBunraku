@@ -24,7 +24,6 @@ func _physics_process(_delta: float) -> void:
 		anger_decrease_delta = 0
 	var _player_forward = Player.instance.get_node("Camera3D").global_basis * Vector3.FORWARD
 	var _angle = _player_forward.angle_to(-_vec_to_player)
-	print(_angle)
 	if _angle < look_anger_range:
 		var _samp = look_anger_curve.sample(1-(_angle/look_anger_range))
 		anger_level += _delta * _samp * look_anger_factor
