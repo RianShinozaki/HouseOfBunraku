@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="HouseOfBunraku"
-run/main_scene="uid://bye6w6mipuigf"
+config/name="House Of Bunraku"
+run/main_scene="uid://djjq7i4x5upx1"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
