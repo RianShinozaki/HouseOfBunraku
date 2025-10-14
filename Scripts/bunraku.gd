@@ -23,6 +23,9 @@ func _ready() -> void:
 	
 	
 func _physics_process(_delta: float) -> void:
+	
+	#anger_level = 0
+	
 	body_sprite.offset = Vector2.ZERO
 	head_sprite.rotation.z = 0
 	if anger_level > 0:
@@ -34,9 +37,6 @@ func _physics_process(_delta: float) -> void:
 	anger_decrease_delta = clamp(anger_decrease_delta, -_delta*2, anger_decrease_max)
 	anger_level -= anger_decrease_delta * _delta
 	anger_level = clamp(anger_level, 0, 1)
-	
-	if not active: return
-	
 	
 	mat.emission_energy_multiplier = 0
 	
@@ -56,6 +56,9 @@ func _physics_process(_delta: float) -> void:
 		$Rattle.playing = false
 		$Breathe.playing = false
 		$Feedback.playing = false
+	
+	if not active: return
+	
 	if anger_level == 1:
 		active = false
 		get_parent().jumpscare()

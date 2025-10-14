@@ -36,6 +36,11 @@ func _physics_process(_delta: float) -> void:
 		anger_level += _delta * 0.08
 		anger_decrease_delta = 0
 	
+	# Get mad if cat is not attended to
+	if get_tree().get_nodes_in_group("Cat").size() > 0 and not Player.instance.held_object is Cat:
+		anger_level += _delta * 0.08
+		anger_decrease_delta = 0
+	
 	var _dist_to_player = _vec_to_player.length()
 	# CHECK FOR MEAT AND DROP GEAR
 	if _dist_to_player < 0.3 and Player.instance.held_object is Meatball and has_gear:

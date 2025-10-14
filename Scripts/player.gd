@@ -15,7 +15,7 @@ extends CharacterBody3D
 var walk_velocity: Vector3
 var air_velocity: float
 var raycast: RayCast3D
-var held_object: Grabbable = null
+var held_object: Node3D = null
 static var instance: Player
 var walk_sample_pos: float = 0
 var active: bool = true
