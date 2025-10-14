@@ -1,3 +1,5 @@
+class_name Key
+
 extends Grabbable
 
 var door_is_open: bool = false
@@ -18,7 +20,7 @@ func unlock_key():
 	door_is_open = true
 	freeze = false
 
-func on_pickup():
+func on_pickup(_bypass: bool = false):
 	if not can_pickup(): 
 		return
 	freeze = false

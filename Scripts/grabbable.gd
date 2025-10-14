@@ -9,8 +9,8 @@ func can_pickup() -> bool:
 		return false
 	return true
 	
-func on_pickup():
-	if not can_pickup(): return
+func on_pickup(_bypass: bool = false):
+	if not can_pickup() and not _bypass: return
 	held = true
 	# Disable all collisions
 	for child in get_children():
