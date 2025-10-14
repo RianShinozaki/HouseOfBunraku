@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1144s66jueku" path="res://Art Assets/Models/Clock/texture_Clock_tex.png" id="2_eiut8"]
 [ext_resource type="Texture2D" uid="uid://cirn8jbhy81ot" path="res://Art Assets/Models/Clock/Clock-Glass.png" id="3_axheb"]
 [ext_resource type="Texture2D" uid="uid://bw3rnqpxwpwvp" path="res://Art Assets/Models/Clock/Clock-Hand-Glass.png" id="4_l6xk5"]
-[ext_resource type="Script" uid="uid://cs781508x4a5b" path="res://Objects/glass.gd" id="4_sngv3"]
+[ext_resource type="Script" path="res://Objects/glass.gd" id="4_sngv3"]
 [ext_resource type="Texture2D" uid="uid://d1luglgh34gth" path="res://Art Assets/Pendulum.png" id="5_d7gb4"]
 [ext_resource type="Script" uid="uid://wpea1e0fyj0q" path="res://Scripts/pendulum.gd" id="5_ranem"]
 [ext_resource type="Texture2D" uid="uid://c8d2lmbb75t6l" path="res://ClockHand.png" id="6_l6xk5"]
@@ -67,7 +67,7 @@ texture_filter = 2
 texture = ExtResource("5_d7gb4")
 
 [node name="Key" parent="." instance=ExtResource("12_1iwbm")]
-transform = Transform3D(-0.30107343, -0.0797202, 0.3911515, 0.37339813, 0.117015794, 0.31125736, -0.1411688, 0.4795331, -0.010925942, 0.183, 0.3, 0)
+transform = Transform3D(-0.30107343, -0.0797202, 0.3911515, 0.37339813, 0.117015794, 0.31125736, -0.1411688, 0.4795331, -0.010925942, 0.189, 0.231, -0.048)
 
 [node name="ClockHandPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15993772, 0.80100834, 0)
@@ -80,7 +80,8 @@ shaded = true
 texture_filter = 2
 texture = ExtResource("6_l6xk5")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="TickSFX" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("10_amd6o")
-autoplay = true
-max_distance = 2.0
+unit_size = 3.29
+pitch_scale = 1.3
+max_distance = 768.83

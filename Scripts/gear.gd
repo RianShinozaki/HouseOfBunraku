@@ -1,5 +1,6 @@
-extends Grabbable
+class_name Gear
 
+extends Grabbable
 
 var is_in_socket: bool = false
 

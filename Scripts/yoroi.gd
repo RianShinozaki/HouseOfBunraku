@@ -30,5 +30,9 @@ func _physics_process(_delta: float) -> void:
 			anger_decrease_delta = 0
 	else:
 		no_look_time = 0
+	
+	if GearSocket.instance.has_gear:
+		anger_level += _delta * 0.08
+		anger_decrease_delta = 0
 		
 	super._physics_process(_delta)

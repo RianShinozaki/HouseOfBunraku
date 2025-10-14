@@ -6,7 +6,9 @@ extends Node3D
 var time_elapsed: float = 0.0
 
 func _process(delta: float) -> void:
-	time_elapsed += delta
+	if not $"../GearSocket".has_gear: return
+	
+	time_elapsed += delta * 4
 	
 	var rotation_z = sin(time_elapsed * swing_speed) * deg_to_rad(swing_angle)
 	rotation.z = rotation_z
