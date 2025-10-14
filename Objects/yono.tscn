@@ -14,12 +14,12 @@
 [ext_resource type="AudioStream" uid="uid://cq1l7dfo2jvvq" path="res://Audio Pack/Feedback.mp3" id="12_xjoem"]
 
 [sub_resource type="Curve" id="Curve_5sjfi"]
-_data = [Vector2(0.00470588, 0.37078655), 0.0, 0.14044942, 0, 0, Vector2(1, 1), 1.8998978, 0.0, 0, 0]
+_data = [Vector2(0.00470588, 0.370787), 0.0, 0.140449, 0, 0, Vector2(1, 1), 1.8999, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lntlw"]
 radius = 0.12
-height = 0.72753906
+height = 0.727539
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbg5b"]
 transparency = 2
@@ -33,7 +33,6 @@ emission_texture = ExtResource("4_1vdij")
 normal_enabled = true
 normal_scale = 0.53
 normal_texture = ExtResource("3_h58cf")
-bent_normal_texture = ExtResource("3_h58cf")
 rim = 0.43
 rim_tint = 0.3
 rim_texture = ExtResource("6_xjoem")
@@ -42,8 +41,6 @@ heightmap_scale = 1.0
 heightmap_texture = ExtResource("5_sih24")
 texture_filter = 2
 billboard_keep_scale = true
-stencil_flags = 2
-stencil_outline_thickness = 1.18
 
 [node name="Yono" type="AnimatableBody3D"]
 script = ExtResource("1_5sjfi")
@@ -59,11 +56,10 @@ anger_decrease_delta = 0.15
 anger_decrease_max = 0.15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.040527344, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0405273, 0)
 shape = SubResource("CapsuleShape3D_lntlw")
 
 [node name="Body" type="Sprite3D" parent="."]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_qbg5b")
 shaded = true
 double_sided = false
@@ -87,13 +83,13 @@ hframes = 4
 script = ExtResource("7_brmr6")
 
 [node name="BlueKey" parent="Body" instance=ExtResource("2_h58cf")]
-transform = Transform3D(-4.3711392e-08, 4.3711392e-08, 1.0000001, 1, 1.9106855e-15, 4.371139e-08, 0, 1, -4.371139e-08, -0.12136492, -0.10486166, 0.033786178)
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -0.121365, -0.104862, 0.0337862)
 freeze = true
 
 [node name="NegativeLight" type="OmniLight3D" parent="Body"]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19325116, 0.6631539)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.193251, 0.663154)
 visible = false
-light_color = Color(0.04952488, 0.1131409, 0.066137, 1)
+light_color = Color(0.0495249, 0.113141, 0.066137, 1)
 light_energy = 0.0
 light_negative = true
 omni_range = 430.46

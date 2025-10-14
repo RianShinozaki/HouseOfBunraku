@@ -11,12 +11,12 @@
 [ext_resource type="AudioStream" uid="uid://cq1l7dfo2jvvq" path="res://Audio Pack/Feedback.mp3" id="12_i0jt4"]
 
 [sub_resource type="Curve" id="Curve_uwb3h"]
-_data = [Vector2(0, 0.50403947), 0.0, 0.0, 0, 0, Vector2(0.5058824, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.504039), 0.0, 0.0, 0, 0, Vector2(0.505882, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lntlw"]
 radius = 0.12
-height = 0.72753906
+height = 0.727539
 
 [node name="Yoroi" type="AnimatableBody3D"]
 script = ExtResource("1_uwb3h")
@@ -30,11 +30,10 @@ anger_decrease_delta = 0.15
 anger_decrease_max = 0.15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.040527344, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0405273, 0)
 shape = SubResource("CapsuleShape3D_lntlw")
 
 [node name="Body" type="Sprite3D" parent="."]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("2_uwb3h")
 shaded = true
 double_sided = false
@@ -58,9 +57,9 @@ hframes = 4
 script = ExtResource("7_3ggw7")
 
 [node name="NegativeLight" type="OmniLight3D" parent="Body"]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19325116, 0.6631539)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.193251, 0.663154)
 visible = false
-light_color = Color(0.04952488, 0.1131409, 0.066137, 1)
+light_color = Color(0.0495249, 0.113141, 0.066137, 1)
 light_energy = 0.0
 light_negative = true
 omni_range = 430.46
@@ -69,7 +68,7 @@ script = ExtResource("9_t0ea4")
 energy_range = 0.25
 
 [node name="Gear" parent="Body" instance=ExtResource("6_uwb3h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09224159, -0.11273715, 0.059317052)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0922416, -0.112737, 0.0593171)
 freeze = true
 freeze_mode = 0
 
