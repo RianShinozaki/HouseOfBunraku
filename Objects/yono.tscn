@@ -45,12 +45,12 @@ billboard_keep_scale = true
 
 [node name="Yono" type="AnimatableBody3D"]
 script = ExtResource("1_5sjfi")
-too_close_distance = 1.5
+too_close_distance = 1.0
 too_close_curve = SubResource("Curve_5sjfi")
-too_close_factor = 1.0
+too_close_factor = 0.5
 look_anger_range = 0.5
 look_anger_curve = SubResource("Curve_5sjfi")
-look_anger_factor = 0.45
+look_anger_factor = 0.35
 anger_headshake_factor = 0.1
 anger_bodyshake_factor = 1.0
 anger_decrease_delta = 0.15

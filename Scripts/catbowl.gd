@@ -26,10 +26,12 @@ func _process(_delta: float) -> void:
 			if not $CatEating.playing:
 				$CatEating.play()
 				cancel = false
-		else:
-			if $CatEating.playing:
-				$CatEating.stop()
-				cancel = true
+				meated = false
+				$"..".frame = 2
+				remove_from_group("Meat")
+				remove_from_group("Interactable")
+				$"../../Cat".queue_free()
+				
 
 func can_interact():
 	return (Player.instance.held_object is Meatball and not meated) or (Player.instance.held_object == null and meated)
@@ -54,10 +56,8 @@ func on_interact():
 func on_finished():
 	if not cancel:
 		meated = false
-		remove_from_group("Meat")
 		$"..".frame = 0
 		$CatEating.volume_db = -80
 		var _cat = cat_object.instantiate()
 		$"../..".add_child(_cat)
 		_cat.global_position = global_position
-		$"../../Cat".queue_free()
