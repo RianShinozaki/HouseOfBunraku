@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bye6w6mipuigf"]
+[gd_scene load_steps=28 format=3 uid="uid://bye6w6mipuigf"]
 
 [ext_resource type="ArrayMesh" uid="uid://cwi66wxkmptds" path="res://Art Assets/Models/House.obj" id="2_hyobi"]
 [ext_resource type="Material" uid="uid://bywe2h5ftf5v5" path="res://Art Assets/Materials/House.tres" id="3_ceqvn"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://d3wsmxfnjpl2l" path="res://Scripts/catbowl.gd" id="15_di1da"]
 [ext_resource type="Script" uid="uid://btoioc0dqqkf8" path="res://Scripts/cat_eyes.gd" id="16_baccv"]
 [ext_resource type="AudioStream" uid="uid://c0220h410mqn8" path="res://Audio Pack/cat_meow.mp3" id="17_di1da"]
+[ext_resource type="PackedScene" uid="uid://pownsbape1t" path="res://Objects/front_doors.tscn" id="20_66c1n"]
 [ext_resource type="PackedScene" uid="uid://bmea2njewrpcl" path="res://Objects/yoroi.tscn" id="21_di1da"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qbg5b"]
@@ -221,6 +222,9 @@ surface_material_override/0 = ExtResource("3_ceqvn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Table/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118621826, -0.22924805, 0.27041626)
 shape = SubResource("BoxShape3D_ceqvn")
+
+[node name="FrontDoors" parent="Environment" instance=ExtResource("20_66c1n")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.8951795, -0.52139324, 1.5690594)
 
 [node name="Player" parent="." instance=ExtResource("11_lntlw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46437943, -0.09, 1.4211249)
