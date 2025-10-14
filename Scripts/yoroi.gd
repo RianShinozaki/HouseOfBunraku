@@ -12,11 +12,10 @@ var no_look_time: float = 0
 
 func _ready() -> void:
 	super._ready()
-	active = true
 
 func _physics_process(_delta: float) -> void:
-	if Engine.is_editor_hint(): 
-		return
+	if not active: return
+	
 	var _vec_to_player = (Player.instance.global_position - (global_position + Vector3.UP * 0.2))
 	var _player_forward = Player.instance.get_node("Camera3D").global_basis * Vector3.FORWARD
 	var _angle = _player_forward.angle_to(-_vec_to_player)

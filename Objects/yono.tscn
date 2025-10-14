@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://cq1l7dfo2jvvq" path="res://Audio Pack/Feedback.mp3" id="12_xjoem"]
 
 [sub_resource type="Curve" id="Curve_5sjfi"]
-_data = [Vector2(0, 0), 0.0, 0.6430433, 0, 0, Vector2(1, 1), 1.8998978, 0.0, 0, 0]
+_data = [Vector2(0.00470588, 0.37078655), 0.0, 0.14044942, 0, 0, Vector2(1, 1), 1.8998978, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lntlw"]
@@ -38,7 +38,7 @@ rim = 0.43
 rim_tint = 0.3
 rim_texture = ExtResource("6_xjoem")
 heightmap_enabled = true
-heightmap_scale = 3.0
+heightmap_scale = 1.0
 heightmap_texture = ExtResource("5_sih24")
 texture_filter = 2
 billboard_keep_scale = true
@@ -50,9 +50,9 @@ script = ExtResource("1_5sjfi")
 too_close_distance = 1.5
 too_close_curve = SubResource("Curve_5sjfi")
 too_close_factor = 1.0
-look_anger_range = 0.2
+look_anger_range = 0.5
 look_anger_curve = SubResource("Curve_5sjfi")
-look_anger_factor = 0.4
+look_anger_factor = 0.45
 anger_headshake_factor = 0.1
 anger_bodyshake_factor = 1.0
 anger_decrease_delta = 0.15

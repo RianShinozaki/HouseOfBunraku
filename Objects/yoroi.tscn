@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://cq1l7dfo2jvvq" path="res://Audio Pack/Feedback.mp3" id="12_i0jt4"]
 
 [sub_resource type="Curve" id="Curve_uwb3h"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5058824, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.50403947), 0.0, 0.0, 0, 0, Vector2(0.5058824, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lntlw"]

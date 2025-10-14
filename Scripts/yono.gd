@@ -12,10 +12,10 @@ extends Bunraku
 
 func _ready() -> void:
 	super._ready()
-	active = true
-
+	
 func _physics_process(_delta: float) -> void:
-
+	if not active: return
+	
 	var _vec_to_player = (Player.instance.global_position - (global_position + Vector3.UP * 0.2))
 	var _dist_to_player = _vec_to_player.length()
 	if _dist_to_player < too_close_distance:
@@ -24,6 +24,7 @@ func _physics_process(_delta: float) -> void:
 		anger_decrease_delta = 0
 	var _player_forward = Player.instance.get_node("Camera3D").global_basis * Vector3.FORWARD
 	var _angle = _player_forward.angle_to(-_vec_to_player)
+	print(_angle)
 	if _angle < look_anger_range:
 		var _samp = look_anger_curve.sample(1-(_angle/look_anger_range))
 		anger_level += _delta * _samp * look_anger_factor

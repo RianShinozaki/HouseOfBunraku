@@ -77,15 +77,25 @@ func appearance_update():
 	update_lock = true
 	var lights: Array = get_tree().get_nodes_in_group("Light")
 	for _light in lights:
-		_light.visible = false
+		get_tree().create_tween().tween_property(_light, "energy_median", 0, 0.1)
 	await get_tree().create_timer(0.2).timeout
 	for _light in lights:
-		_light.visible = true
+		get_tree().create_tween().tween_property(_light, "energy_median", 1.5, 0.2)
+
 	await get_tree().create_timer(0.1).timeout
 	for _light in lights:
-		_light.visible = false
+		get_tree().create_tween().tween_property(_light, "energy_median", 0, 0.1)
 	await get_tree().create_timer(0.3).timeout
 	emit_signal("appearance_update_end")
 	for _light in lights:
-		_light.visible = true
+		get_tree().create_tween().tween_property(_light, "energy_median", 1.5, 0.2)
 	update_lock = false
+
+func deactivate():
+	appearance_update()
+	active = false
+	visible = false
+
+func activate():
+	active = true
+	visible = true
