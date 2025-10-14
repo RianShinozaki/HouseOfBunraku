@@ -36,7 +36,7 @@ func on_interact():
 		add_child(gear)
 		
 		#teleport to target coordinates 
-		gear.global_position = gear_target_position
+		gear.position = gear_target_position
 		for child in gear.get_children():
 			if child is CollisionShape3D:
 				child.disabled = false

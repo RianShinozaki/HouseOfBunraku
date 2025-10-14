@@ -71,5 +71,6 @@ func adopted() -> void:
 	position = Vector3(0.3, -0.2, -0.5)  
 	rotation_degrees = Vector3(0, 0, 0)
 	scale = Vector3(1, 1, 1) 
-	Player.instance.held_object = null
+	if Player.instance.held_object is Cat:
+		Player.instance.held_object = null
 	remove_from_group("Cat")

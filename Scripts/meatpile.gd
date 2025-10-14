@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@export var meat_ball: PackedScene
+@onready var meat_ball = preload("res://Objects/Meatball.tscn")
 
 func can_interact():
 	return Player.instance.held_object == null

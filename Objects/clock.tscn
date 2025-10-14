@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1144s66jueku" path="res://Art Assets/Models/Clock/texture_Clock_tex.png" id="2_eiut8"]
 [ext_resource type="Texture2D" uid="uid://cirn8jbhy81ot" path="res://Art Assets/Models/Clock/Clock-Glass.png" id="3_axheb"]
 [ext_resource type="Texture2D" uid="uid://bw3rnqpxwpwvp" path="res://Art Assets/Models/Clock/Clock-Hand-Glass.png" id="4_l6xk5"]
-[ext_resource type="Script" uid="uid://cs781508x4a5b" path="res://Objects/glass.gd" id="4_sngv3"]
+[ext_resource type="Script" path="res://Objects/glass.gd" id="4_sngv3"]
 [ext_resource type="Texture2D" uid="uid://d1luglgh34gth" path="res://Art Assets/Pendulum.png" id="5_d7gb4"]
 [ext_resource type="Script" uid="uid://wpea1e0fyj0q" path="res://Scripts/pendulum.gd" id="5_ranem"]
 [ext_resource type="Texture2D" uid="uid://c8d2lmbb75t6l" path="res://ClockHand.png" id="6_l6xk5"]
@@ -27,6 +27,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lntlw")
 
 [node name="GearSocket" parent="." instance=ExtResource("9_m587e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.565552, 0.650373, -0.0644629)
+gear_target_position = Vector3(-0.25, -0.11, -0.1)
+gear_rotation = Vector3(0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

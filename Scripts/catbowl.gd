@@ -1,8 +1,10 @@
 extends StaticBody3D
 
-@export var meat_ball: PackedScene
 var meated: bool = false
 var cancel: bool = false
+
+@onready var cat_object = preload("res://Objects/Cat.tscn")
+@onready var meat_ball = preload("res://Objects/Meatball.tscn")
 
 func _ready() -> void:
 	$CatEating.finished.connect(on_finished)
@@ -55,3 +57,7 @@ func on_finished():
 		remove_from_group("Meat")
 		$"..".frame = 0
 		$CatEating.volume_db = -80
+		var _cat = cat_object.instantiate()
+		$"../..".add_child(_cat)
+		_cat.global_position = global_position
+		$"../../Cat".queue_free()

@@ -24,7 +24,6 @@ func _physics_process(_delta: float) -> void:
 		var _cat = get_tree().get_nodes_in_group("Cat")[0]
 		var _vec_to_cat = _cat.global_position - global_position
 		var _dist_to_cat = _vec_to_cat.length()
-		print(_dist_to_cat)
 		if _dist_to_cat < 0.6:
 			_cat.adopted()
 			_cat.get_parent().remove_child(_cat)

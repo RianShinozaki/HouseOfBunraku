@@ -18,6 +18,7 @@ func on_interact():
 		Player.instance.held_object = null
 		key.get_parent().remove_child(key)
 		
+		$"../..".on_lock_removed()
 		# Destroy the key sprite
 		key.queue_free()
 		$"../../AudioStreamPlayer3D".play()
