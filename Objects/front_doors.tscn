@@ -35,7 +35,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ydypc")
 
 [node name="Lock1" type="Sprite3D" parent="." groups=["Interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.405, 0.01)
-modulate = Color(0, 0.603922, 1, 1)
 shaded = true
 texture_filter = 2
 texture = ExtResource("4_fxtb3")
@@ -50,7 +49,6 @@ shape = SubResource("BoxShape3D_5xtp2")
 
 [node name="Lock2" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.405, 0.01)
-modulate = Color(0.996122, 0.265753, 0.32258, 1)
 shaded = true
 texture_filter = 2
 texture = ExtResource("4_fxtb3")

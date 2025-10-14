@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgti445hohbce"
-path.s3tc="res://.godot/imported/BlueKey-met.png-0ea119d7c2c252a3be5878f39c642f43.s3tc.ctex"
+path="res://.godot/imported/BlueKey-met.png-0ea119d7c2c252a3be5878f39c642f43.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Art Assets/BlueKey-met.png"
-dest_files=["res://.godot/imported/BlueKey-met.png-0ea119d7c2c252a3be5878f39c642f43.s3tc.ctex"]
+dest_files=["res://.godot/imported/BlueKey-met.png-0ea119d7c2c252a3be5878f39c642f43.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

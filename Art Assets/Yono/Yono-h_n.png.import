@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8ei1uv5v1guf"
-path.s3tc="res://.godot/imported/Yono-h_n.png-fd5cecb1c80b5994b7ee8b09d44bc2bc.s3tc.ctex"
+path="res://.godot/imported/Yono-h_n.png-fd5cecb1c80b5994b7ee8b09d44bc2bc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Art Assets/Yono/Yono-h_n.png"
-dest_files=["res://.godot/imported/Yono-h_n.png-fd5cecb1c80b5994b7ee8b09d44bc2bc.s3tc.ctex"]
+dest_files=["res://.godot/imported/Yono-h_n.png-fd5cecb1c80b5994b7ee8b09d44bc2bc.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1144s66jueku"
-path.s3tc="res://.godot/imported/texture_Clock_tex.png-31325ea8087aebfd6c6fd4365d1457e3.s3tc.ctex"
+path="res://.godot/imported/texture_Clock_tex.png-31325ea8087aebfd6c6fd4365d1457e3.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Art Assets/Models/Clock/texture_Clock_tex.png"
-dest_files=["res://.godot/imported/texture_Clock_tex.png-31325ea8087aebfd6c6fd4365d1457e3.s3tc.ctex"]
+dest_files=["res://.godot/imported/texture_Clock_tex.png-31325ea8087aebfd6c6fd4365d1457e3.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

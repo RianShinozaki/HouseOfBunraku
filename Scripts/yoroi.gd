@@ -43,7 +43,7 @@ func _physics_process(_delta: float) -> void:
 	
 	var _dist_to_player = _vec_to_player.length()
 	# CHECK FOR MEAT AND DROP GEAR
-	if _dist_to_player < 0.3 and Player.instance.held_object is Meatball and has_gear:
+	if _dist_to_player < 0.6 and Player.instance.held_object is Meatball and has_gear:
 		var gear = $Body/Gear
 		gear.get_parent().remove_child(gear)
 		$Eat.play()

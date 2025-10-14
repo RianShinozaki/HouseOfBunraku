@@ -24,7 +24,7 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	
-	anger_level = 0
+	#anger_level = 0
 	
 	body_sprite.offset = Vector2.ZERO
 	head_sprite.rotation.z = 0
