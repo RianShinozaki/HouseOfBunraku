@@ -1,11 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://bye6w6mipuigf"]
+[gd_scene load_steps=27 format=3 uid="uid://bye6w6mipuigf"]
 
 [ext_resource type="ArrayMesh" uid="uid://cwi66wxkmptds" path="res://Art Assets/Models/House.obj" id="2_hyobi"]
 [ext_resource type="Material" uid="uid://bywe2h5ftf5v5" path="res://Art Assets/Materials/House.tres" id="3_ceqvn"]
 [ext_resource type="Texture2D" uid="uid://cce2h2tfik75p" path="res://Art Assets/Chandelier.png" id="4_mdqsx"]
 [ext_resource type="AudioStream" uid="uid://bt7rm8buo3fmx" path="res://Audio Pack/candle_flame_crackle.mp3" id="6_jxyng"]
 [ext_resource type="PackedScene" uid="uid://qgrt3asn0m3f" path="res://Objects/clock.tscn" id="8_8edix"]
-[ext_resource type="PackedScene" uid="uid://crid5pnloa3s1" path="res://Objects/Gear.tscn" id="8_qpgel"]
 [ext_resource type="Texture2D" uid="uid://dtuwpjlvummu8" path="res://Art Assets/CatBowl.png" id="9_lntlw"]
 [ext_resource type="Texture2D" uid="uid://c1rbm60207tep" path="res://Art Assets/MeatPile.png" id="9_xacle"]
 [ext_resource type="Script" uid="uid://c47f63dcgc44i" path="res://Scripts/meatpile.gd" id="10_1shu2"]
@@ -99,9 +98,6 @@ energy_delta_range = 0.02
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Environment/Objects/Chandelier"]
 stream = ExtResource("6_jxyng")
 autoplay = true
-
-[node name="Gear" parent="Environment/Objects" instance=ExtResource("8_qpgel")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.982646, -0.41183656, -0.89881295)
 
 [node name="Clock" parent="Environment/Objects" instance=ExtResource("8_8edix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.636219, -0.52370155, -0.9980193)
@@ -230,7 +226,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46437943, -0.09, 1.4211249)
 move_speed = 1.5
 
-[node name="Yono" parent="." instance=ExtResource("21_di1da")]
+[node name="Yoroi" parent="." instance=ExtResource("21_di1da")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98887193, -0.20045948, 0)
 
 [editable path="Environment/Objects/Cupboards/Fridge4"]
