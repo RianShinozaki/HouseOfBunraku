@@ -63,21 +63,27 @@ func _unhandled_input(event: InputEvent) -> void:
 			try_interact()
 
 func try_interact():
-	# If already holding something drop it
+	
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
+		
 		# Check if object is pickupable
 		if collider and collider.is_in_group("Interactable"):
 			interact_object(collider)
+			return  
 		elif collider and collider.is_in_group("Item"):
 			pick_up_object(collider)
+			return  
 		elif held_object:
 			drop_held_object()
 			return
 	else:
+		#raycast is not hitting anything
 		if held_object:
 			drop_held_object()
 			return
+	
+
 
 func pick_up_object(object: Node3D):
 	if held_object:
@@ -95,9 +101,10 @@ func pick_up_object(object: Node3D):
 	held_object = object
 
 func interact_object(object: Node3D):
-	if object.can_interact():
-		object.on_interact()
-
+	if object.has_method("can_interact"):
+		if object.can_interact():
+			object.on_interact()
+	
 func drop_held_object():
 	if not held_object:
 		return

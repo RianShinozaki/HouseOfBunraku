@@ -29,13 +29,15 @@ func _physics_process(_delta: float) -> void:
 		var _x = randf_range(-anger_level, anger_level)
 		head_sprite.rotation.z = -_x * anger_headshake_factor
 		body_sprite.offset = Vector2(_x, 0) * anger_bodyshake_factor
-		
-	if not active: return
 	
 	anger_decrease_delta += _delta
 	anger_decrease_delta = clamp(anger_decrease_delta, -_delta*2, anger_decrease_max)
 	anger_level -= anger_decrease_delta * _delta
 	anger_level = clamp(anger_level, 0, 1)
+	
+	if not active: return
+	
+	
 	mat.emission_energy_multiplier = 0
 	
 	if anger_level > 0:

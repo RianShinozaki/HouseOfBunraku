@@ -9,10 +9,11 @@ extends Bunraku
 @export var no_look_max_time: float
 
 var no_look_time: float = 0
+var has_been_fed: bool = false 
+var has_gear := true
 
 func _ready() -> void:
 	super._ready()
-
 func _physics_process(_delta: float) -> void:
 	super._physics_process(_delta)
 	
@@ -30,7 +31,20 @@ func _physics_process(_delta: float) -> void:
 	else:
 		no_look_time = 0
 	
+	# Get mad if clock is on
 	if GearSocket.instance.has_gear:
 		anger_level += _delta * 0.08
 		anger_decrease_delta = 0
-		
+	
+	var _dist_to_player = _vec_to_player.length()
+	# CHECK FOR MEAT AND DROP GEAR
+	if _dist_to_player < 0.3 and Player.instance.held_object is Meatball and has_gear:
+		var gear = $Body/Gear
+		gear.get_parent().remove_child(gear)
+		$Eat.play()
+		appearance_update()
+		Player.instance.held_object.queue_free()
+		Player.instance.get_node("Camera3D").add_child(gear)
+		Player.instance.held_object = gear
+		gear.on_pickup(true)
+		has_gear = false
