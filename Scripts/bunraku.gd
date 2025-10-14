@@ -57,7 +57,6 @@ func _physics_process(_delta: float) -> void:
 	if anger_level == 1:
 		active = false
 		get_parent().jumpscare()
-		appearance_update()
 	
 	if anger_level <= 0.33  and $Body/Head.frame != 0:
 		appearance_update()

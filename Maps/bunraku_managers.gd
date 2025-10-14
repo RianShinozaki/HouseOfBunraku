@@ -28,6 +28,10 @@ func _process(delta: float) -> void:
 		$CreakSFX.play()
 
 func jumpscare():
+	$"../Environment/DirectionalLight3D".light_energy = 0.2
+	var lights: Array = get_tree().get_nodes_in_group("Light")
+	for _light in lights:
+		get_tree().create_tween().tween_property(_light, "energy_median", 0, 0.1)
 	Player.instance.active = false
 	Player.instance.get_node("CanvasLayer").visible = false
 	$JumpscareSFX.play()
