@@ -26,3 +26,17 @@ func _process(delta: float) -> void:
 		active_bunraku_ref.activate()
 		current_active_time = 0
 		$CreakSFX.play()
+
+func jumpscare():
+	Player.instance.active = false
+	Player.instance.get_node("CanvasLayer").visible = false
+	$JumpscareSFX.play()
+	Player.instance.look_at( global_position, Vector3.UP, true)
+	Player.instance.rotate_y(PI)
+	Player.instance.get_node("Camera3D").rotation_degrees = Vector3(0.2, 0, 0)
+	global_position = Player.instance.global_position + Player.instance.global_basis * Vector3.FORWARD * 0.3
+	global_position.y = -0.2
+	var _to = Player.instance.global_position + Player.instance.global_basis * Vector3.FORWARD * 0.15
+	await get_tree().create_tween().tween_property(self, "global_position", Vector3(_to.x, -0.2, _to.z) , 1.4).finished
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_file("res://Maps/GameOverScreen.tscn")

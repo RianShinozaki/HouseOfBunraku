@@ -23,14 +23,19 @@ func _ready() -> void:
 	
 	
 func _physics_process(_delta: float) -> void:
+	body_sprite.offset = Vector2.ZERO
+	head_sprite.rotation.z = 0
+	if anger_level > 0:
+		var _x = randf_range(-anger_level, anger_level)
+		head_sprite.rotation.z = -_x * anger_headshake_factor
+		body_sprite.offset = Vector2(_x, 0) * anger_bodyshake_factor
+		
+	if not active: return
+	
 	anger_decrease_delta += _delta
 	anger_decrease_delta = clamp(anger_decrease_delta, -_delta*2, anger_decrease_max)
 	anger_level -= anger_decrease_delta * _delta
 	anger_level = clamp(anger_level, 0, 1)
-	
-	if not active: return
-	body_sprite.offset = Vector2.ZERO
-	head_sprite.rotation.z = 0
 	mat.emission_energy_multiplier = 0
 	
 	if anger_level > 0:
@@ -43,10 +48,6 @@ func _physics_process(_delta: float) -> void:
 		$Feedback.volume_db = -(1-anger_level)*40
 		$Rattle.pitch_scale = 1+anger_level*2
 		
-		var _x = randf_range(-anger_level, anger_level)
-		head_sprite.rotation.z = -_x * anger_headshake_factor
-		body_sprite.offset = Vector2(_x, 0) * anger_bodyshake_factor
-		
 		if not update_lock:
 			mat.emission_energy_multiplier = anger_level
 	else:
@@ -54,7 +55,9 @@ func _physics_process(_delta: float) -> void:
 		$Breathe.playing = false
 		$Feedback.playing = false
 	if anger_level == 1:
-		get_tree().reload_current_scene()
+		active = false
+		get_parent().jumpscare()
+		appearance_update()
 	
 	if anger_level <= 0.33  and $Body/Head.frame != 0:
 		appearance_update()

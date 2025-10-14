@@ -14,6 +14,8 @@ func _ready() -> void:
 	super._ready()
 	
 func _physics_process(_delta: float) -> void:
+	super._physics_process(_delta)
+	
 	if not active: return
 	
 	var _vec_to_player = (Player.instance.global_position - (global_position + Vector3.UP * 0.2))
@@ -32,5 +34,4 @@ func _physics_process(_delta: float) -> void:
 		anger_level += _delta * 0.08
 		anger_decrease_delta = 0
 	
-	super._physics_process(_delta)
 	

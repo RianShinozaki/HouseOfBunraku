@@ -18,6 +18,7 @@ var raycast: RayCast3D
 var held_object: Grabbable = null
 static var instance: Player
 var walk_sample_pos: float = 0
+var active: bool = true
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -30,6 +31,8 @@ func _ready() -> void:
 	instance = self
 	
 func _physics_process(_delta: float) -> void:
+	if not active: return
+	
 	velocity = get_walk_velocity(_delta) + Vector3.UP * get_air_velocity(_delta)
 	move_and_slide()
 	
@@ -40,6 +43,8 @@ func _physics_process(_delta: float) -> void:
 			$CanvasLayer/TextureRect.texture = circleUI
 		
 func _unhandled_input(event: InputEvent) -> void:
+	if not active: return
+	
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate(Vector3(0, -1, 0), mouse_sensitivity * event.screen_relative.x)
 		$Camera3D.rotate(Vector3(-1, 0, 0), mouse_sensitivity * event.screen_relative.y)

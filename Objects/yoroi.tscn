@@ -59,6 +59,7 @@ script = ExtResource("7_3ggw7")
 
 [node name="NegativeLight" type="OmniLight3D" parent="Body"]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19325116, 0.6631539)
+visible = false
 light_color = Color(0.04952488, 0.1131409, 0.066137, 1)
 light_energy = 0.0
 light_negative = true
